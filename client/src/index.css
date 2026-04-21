@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #6366f1;
+  --color-primary-hover: #4f46e5;
+  --color-bg-dark: #0f172a;
+  --color-bg-card: rgba(30, 41, 59, 0.7);
+  --font-plus-jakarta: 'Plus Jakarta Sans', sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-dark text-[#f8fafc] font-plus-jakarta antialiased overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-[rgba(30,41,59,0.7)] backdrop-blur-xl border border-[rgba(255,255,255,0.1)];
+  }
+}
+
+/* Custom animations still useful */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
